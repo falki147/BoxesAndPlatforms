@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entities>
+  <entity id="big" x="0" y="0" z="0" width="3" height="3" />
+  <entity id="small" x="-3" y="1" z="0" />
+  <entity id="big" x="-8" y="0" z="0" width="3" height="3" />
+  <entity id="diamond" x="-8" y="0" z="1" />
+  <entity id="diamond" x="-7" y="0" z="1" />
+  <entity id="diamond" x="-6" y="0" z="1" />
+  <entity id="diamond" x="-6" y="1" z="1" />
+  <entity id="diamond" x="-7" y="1" z="1" />
+  <entity id="diamond" x="-8" y="1" z="1" />
+  <entity id="diamond" x="-8" y="2" z="1" />
+  <entity id="diamond" x="-7" y="2" z="1" />
+  <entity id="diamond" x="-6" y="2" z="1" />
+  <entity id="big" x="-8" y="5" z="0" width="3" height="3" />
+  <entity id="cactus" x="-8" y="5" z="1" />
+  <entity id="cactus" x="-6" y="5" z="1" />
+  <entity id="cactus" x="-6" y="7" z="1" />
+  <entity id="cactus" x="-8" y="7" z="1" />
+  <entity id="falling" x="-7" y="6" z="1" />
+  <entity id="big" x="-3" y="5" z="0" width="3" height="3" />
+  <entity id="diamond" x="-3" y="5" z="1" />
+  <entity id="diamond" x="-2" y="5" z="1" />
+  <entity id="diamond" x="-1" y="5" z="1" />
+  <entity id="diamond" x="-1" y="6" z="1" />
+  <entity id="diamond" x="-1" y="7" z="1" />
+  <entity id="diamond" x="-2" y="7" z="1" />
+  <entity id="diamond" x="-3" y="7" z="1" />
+  <entity id="diamond" x="-3" y="6" z="1" />
+  <entity id="small" x="0" y="6" z="0" activation="always" onEnd="reverse">
+    <keyframe time="2" x="4" y="6" z="0" />
+  </entity>
+  <entity id="big" x="5" y="5" z="0" width="3" height="3" />
+  <entity id="end" x="6" y="6" z="1" />
+  <entity id="player" x="1" y="1" z="1" />
+</entities>

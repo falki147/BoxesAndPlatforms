@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entities>
+  <entity id="big" x="0" y="0" z="0" width="3" height="3" />
+  <entity id="big" x="5" y="0" z="0" width="3" height="3" />
+  <entity id="spikes" x="6" y="0" z="1" />
+  <entity id="spikes" x="6" y="1" z="1" />
+  <entity id="spikes" x="6" y="2" z="1" />
+  <entity id="player" x="1" y="1" z="1" />
+  <entity id="big" x="10" y="0" z="0" width="3" height="3" />
+  <entity id="tree" x="10" y="0" z="1" />
+  <entity id="tree" x="12" y="0" z="1" />
+  <entity id="tree" x="12" y="2" z="1" />
+  <entity id="tree" x="10" y="2" z="1" />
+  <entity id="diamond" x="5" y="0" z="1" />
+  <entity id="diamond" x="5" y="1" z="1" />
+  <entity id="diamond" x="5" y="2" z="1" />
+  <entity id="diamond" x="7" y="0" z="1" />
+  <entity id="diamond" x="7" y="1" z="1" />
+  <entity id="diamond" x="7" y="2" z="1" />
+  <entity id="diamond" x="11" y="1" z="1" />
+  <entity id="big" x="10" y="4" z="1" width="3" height="4" />
+  <entity id="box" x="11" y="5" z="2" />
+  <entity id="big" x="10" y="8" z="3" width="3" height="3" />
+  <entity id="end" x="11" y="9" z="4" />
+</entities>

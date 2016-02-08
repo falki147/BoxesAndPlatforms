@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shader>
+	<input name="inPosition" type="POSITION" />
+	<input name="inTexCoord" type="TEXCOORD" />
+	<input name="inColor"    type="COLOR" />
+	<input name="uTex"       type="TEXTURE" />
+	<input name="uMVP"       type="MVPMAT" />
+	
+	<vertex>
+		#version 330 core
+		
+		in vec3 inPosition;
+		in vec2 inTexCoord;
+		in vec4 inColor;
+		
+		out vec4 vColor;
+		out vec2 vTexCoord;
+		
+		uniform mat4 uMVP;
+		
+		void main() {
+			gl_Position = uMVP * vec4(inPosition, 1.0);
+			vColor      = inColor;
+			vTexCoord   = inTexCoord;
+		}
+	</vertex>
+	<fragment>
+		#version 330 core
+		
+		in vec4 vColor;
+		in vec2 vTexCoord;
+		
+		out vec4 outColor;
+		
+		uniform sampler2D uTex;
+		
+		void main() {
+			outColor = vColor * texture(uTex, vTexCoord);
+		}
+	</fragment>
+</shader>

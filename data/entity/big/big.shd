@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shader>
+	<input name="inPosition" type="POSITION" />
+	<input name="inNormal"   type="NORMAL" />
+	<input name="inColor"    type="COLOR" />
+	<input name="uMVP"       type="MVPMAT" />
+	<input name="uModelMat"  type="MODELMAT" />
+	<input name="uNormMat"   type="NORMMAT" />
+	<input name="uCamera"    type="CAMERAPOS" />
+	<input name="uLightDir"  type="LIGHTDIR" />
+	<input name="uAmbient"   type="LIGHTAMBIENT" />
+	<input name="uSpecular"  type="LIGHTSPECULAR" />
+	
+	<vertex>
+		#version 330 core
+		
+		in vec3 inPosition;
+		in vec3 inNormal;
+		in vec4 inColor;
+		
+		out vec4 vColor;
+		out vec3 vNormal;
+		out vec3 vCamera;
+		out float vPosZ;
+		
+		uniform mat4 uMVP;
+		uniform mat4 uModelMat;
+		uniform mat3 uNormMat;
+		uniform vec3 uCamera;
+		
+		void main() {
+			vec3 position = vec3(uModelMat * vec4(inPosition, 1.0));
+			
+			gl_Position = uMVP * vec4(inPosition, 1.0);
+			vColor      = inColor;
+			vNormal     = inNormal * uNormMat;
+			vCamera     = uCamera - position;
+			vPosZ       = position.z;
+		}
+	</vertex>
+	<fragment>
+		#version 330 core
+		
+		in vec4 vColor;
+		in vec3 vNormal;
+		in vec3 vCamera;
+		in float vPosZ;
+		
+		out vec4 outColor;
+		
+		uniform vec3 uLightDir;
+		uniform vec3 uAmbient;
+		uniform vec3 uSpecular;
+		
+		void main() {
+			vec4 diff = vec4(vColor.rgb, 1 - vColor.a * (1 - smoothstep(-4, 0, vPosZ)));
+			vec3 norm = normalize(vNormal);
+			
+			float diffFactor = max(dot(norm, uLightDir), 0);
+			float specFactor = pow(max(dot(reflect(-uLightDir, norm), normalize(vCamera)), 0), 20);
+			
+			outColor = vec4(diff.rgb * uAmbient + diff.rgb * diffFactor + uSpecular * specFactor, diff.a);
+		}
+	</fragment>
+</shader>

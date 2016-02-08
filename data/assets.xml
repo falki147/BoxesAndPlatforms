@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<assets>
+  <asset type="shader" file="menu\menu.shd" />
+  <asset type="texture" file="menu\menu.png" />
+  <asset type="atlas" file="menu\menu.xml" />
+</assets>

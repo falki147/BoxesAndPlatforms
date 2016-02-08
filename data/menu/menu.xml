@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<atlas width="256" height="256">
+  <images>
+    <image name="point" offsetX="0" offsetY="0" flipped="false" x="0" y="256" w="1" h="1" />
+    <image name="cursor" offsetX="0" offsetY="0" flipped="false" x="0" y="254" w="18" h="27" />
+  </images>
+  <fonts>
+    <font name="menufont" height="36">
+      <glyph char="32" advX="12" advY="0" offsetX="0" offsetY="36" flipped="false" x="0" y="0" w="0" h="0" />
+      <glyph char="33" advX="11" advY="0" offsetX="2" offsetY="11" flipped="false" x="0" y="226" w="6" h="25" />
+      <glyph char="34" advX="15" advY="0" offsetX="1" offsetY="11" flipped="true" x="0" y="200" w="9" h="12" />
+      <glyph char="35" advX="31" advY="0" offsetX="1" offsetY="11" flipped="false" x="7" y="226" w="29" h="25" />
+      <glyph char="36" advX="26" advY="0" offsetX="1" offsetY="8" flipped="true" x="19" y="256" w="31" h="24" />
+      <glyph char="37" advX="33" advY="0" offsetX="1" offsetY="11" flipped="true" x="0" y="187" w="25" h="31" />
+      <glyph char="38" advX="26" advY="0" offsetX="1" offsetY="11" flipped="false" x="0" y="155" w="25" h="25" />
+      <glyph char="39" advX="8" advY="0" offsetX="1" offsetY="11" flipped="false" x="10" y="200" w="6" h="9" />
+      <glyph char="40" advX="14" advY="0" offsetX="3" offsetY="8" flipped="true" x="17" y="200" w="35" h="10" />
+      <glyph char="41" advX="14" advY="0" offsetX="1" offsetY="8" flipped="true" x="37" y="231" w="35" h="10" />
+      <glyph char="42" advX="17" advY="0" offsetX="1" offsetY="11" flipped="true" x="37" y="220" w="13" h="15" />
+      <glyph char="43" advX="22" advY="0" offsetX="1" offsetY="14" flipped="false" x="51" y="220" w="20" h="19" />
+      <glyph char="44" advX="9" advY="0" offsetX="1" offsetY="31" flipped="false" x="51" y="256" w="7" h="9" />
+      <glyph char="45" advX="19" advY="0" offsetX="1" offsetY="21" flipped="false" x="51" y="246" w="17" h="5" />
+      <glyph char="46" advX="9" advY="0" offsetX="1" offsetY="31" flipped="true" x="51" y="240" w="5" h="7" />
+      <glyph char="47" advX="21" advY="0" offsetX="0" offsetY="11" flipped="true" x="69" y="256" w="25" h="22" />
+      <glyph char="48" advX="29" advY="0" offsetX="2" offsetY="11" flipped="false" x="0" y="129" w="25" h="25" />
+      <glyph char="49" advX="20" advY="0" offsetX="2" offsetY="11" flipped="false" x="0" y="103" w="16" h="25" />
+      <glyph char="50" advX="26" advY="0" offsetX="1" offsetY="11" flipped="false" x="0" y="77" w="23" h="25" />
+      <glyph char="51" advX="26" advY="0" offsetX="1" offsetY="11" flipped="false" x="17" y="103" w="23" h="25" />
+      <glyph char="52" advX="27" advY="0" offsetX="0" offsetY="11" flipped="true" x="0" y="51" w="25" h="26" />
+      <glyph char="53" advX="26" advY="0" offsetX="2" offsetY="11" flipped="false" x="24" y="77" w="23" h="25" />
+      <glyph char="54" advX="27" advY="0" offsetX="2" offsetY="11" flipped="true" x="0" y="24" w="25" h="24" />
+      <glyph char="55" advX="24" advY="0" offsetX="1" offsetY="11" flipped="false" x="26" y="51" w="22" h="25" />
+      <glyph char="56" advX="27" advY="0" offsetX="1" offsetY="11" flipped="false" x="26" y="25" w="25" h="25" />
+      <glyph char="57" advX="27" advY="0" offsetX="1" offsetY="11" flipped="false" x="26" y="189" w="24" h="25" />
+      <glyph char="58" advX="10" advY="0" offsetX="2" offsetY="18" flipped="false" x="26" y="163" w="6" h="18" />
+      <glyph char="59" advX="10" advY="0" offsetX="2" offsetY="18" flipped="false" x="26" y="144" w="6" h="22" />
+      <glyph char="60" advX="15" advY="0" offsetX="1" offsetY="17" flipped="true" x="26" y="121" w="19" h="13" />
+      <glyph char="61" advX="22" advY="0" offsetX="2" offsetY="18" flipped="true" x="41" y="107" w="13" h="18" />
+      <glyph char="62" advX="15" advY="0" offsetX="1" offsetY="17" flipped="false" x="48" y="88" w="14" h="19" />
+      <glyph char="63" advX="23" advY="0" offsetX="0" offsetY="11" flipped="false" x="49" y="68" w="22" h="25" />
+      <glyph char="64" advX="36" advY="0" offsetX="2" offsetY="10" flipped="true" x="52" y="42" w="28" h="32" />
+      <glyph char="65" advX="29" advY="0" offsetX="0" offsetY="11" flipped="true" x="33" y="163" w="25" h="29" />
+      <glyph char="66" advX="29" advY="0" offsetX="3" offsetY="11" flipped="false" x="51" y="189" w="24" h="25" />
+      <glyph char="67" advX="26" advY="0" offsetX="2" offsetY="11" flipped="false" x="46" y="133" w="23" h="25" />
+      <glyph char="68" advX="29" advY="0" offsetX="3" offsetY="11" flipped="false" x="72" y="220" w="24" h="25" />
+      <glyph char="69" advX="26" advY="0" offsetX="3" offsetY="11" flipped="false" x="95" y="256" w="23" h="25" />
+      <glyph char="70" advX="26" advY="0" offsetX="3" offsetY="11" flipped="false" x="59" y="163" w="22" h="25" />
+      <glyph char="71" advX="30" advY="0" offsetX="2" offsetY="11" flipped="true" x="76" y="194" w="25" h="26" />
+      <glyph char="72" advX="30" advY="0" offsetX="3" offsetY="11" flipped="false" x="97" y="230" w="24" h="25" />
+      <glyph char="73" advX="19" advY="0" offsetX="1" offsetY="11" flipped="false" x="119" y="256" w="17" h="25" />
+      <glyph char="74" advX="22" advY="0" offsetX="0" offsetY="11" flipped="false" x="63" y="107" w="19" h="25" />
+      <glyph char="75" advX="27" advY="0" offsetX="3" offsetY="11" flipped="false" x="70" y="137" w="24" h="25" />
+      <glyph char="76" advX="24" advY="0" offsetX="3" offsetY="11" flipped="false" x="82" y="167" w="21" h="25" />
+      <glyph char="77" advX="35" advY="0" offsetX="3" offsetY="11" flipped="true" x="102" y="204" w="25" h="30" />
+      <glyph char="78" advX="30" advY="0" offsetX="3" offsetY="11" flipped="false" x="122" y="230" w="24" h="25" />
+      <glyph char="79" advX="30" advY="0" offsetX="2" offsetY="11" flipped="false" x="137" y="256" w="26" h="25" />
+      <glyph char="80" advX="28" advY="0" offsetX="3" offsetY="11" flipped="false" x="72" y="81" w="24" h="25" />
+      <glyph char="81" advX="30" advY="0" offsetX="2" offsetY="11" flipped="false" x="83" y="111" w="27" h="28" />
+      <glyph char="82" advX="29" advY="0" offsetX="3" offsetY="11" flipped="false" x="95" y="141" w="25" h="25" />
+      <glyph char="83" advX="27" advY="0" offsetX="1" offsetY="11" flipped="false" x="104" y="173" w="25" h="25" />
+      <glyph char="84" advX="25" advY="0" offsetX="0" offsetY="11" flipped="false" x="128" y="204" w="25" h="25" />
+      <glyph char="85" advX="30" advY="0" offsetX="3" offsetY="11" flipped="false" x="147" y="230" w="24" h="25" />
+      <glyph char="86" advX="28" advY="0" offsetX="0" offsetY="11" flipped="false" x="164" y="256" w="28" h="25" />
+      <glyph char="87" advX="40" advY="0" offsetX="0" offsetY="11" flipped="true" x="81" y="55" w="25" h="40" />
+      <glyph char="88" advX="27" advY="0" offsetX="0" offsetY="11" flipped="false" x="97" y="82" w="27" h="25" />
+      <glyph char="89" advX="26" advY="0" offsetX="-1" offsetY="11" flipped="true" x="111" y="115" w="25" h="28" />
+      <glyph char="90" advX="25" advY="0" offsetX="1" offsetY="11" flipped="false" x="121" y="147" w="23" h="25" />
+      <glyph char="91" advX="14" advY="0" offsetX="3" offsetY="8" flipped="true" x="81" y="14" w="35" h="11" />
+      <glyph char="92" advX="21" advY="0" offsetX="0" offsetY="11" flipped="false" x="130" y="178" w="22" h="25" />
+      <glyph char="93" advX="14" advY="0" offsetX="1" offsetY="8" flipped="false" x="107" y="56" w="11" h="35" />
+      <glyph char="94" advX="17" advY="0" offsetX="0" offsetY="11" flipped="false" x="53" y="200" w="17" h="8" />
+      <glyph char="95" advX="15" advY="0" offsetX="0" offsetY="37" flipped="true" x="55" y="107" w="6" h="16" />
+      <glyph char="96" advX="12" advY="0" offsetX="1" offsetY="9" flipped="false" x="59" y="256" w="9" h="7" />
+      <glyph char="97" advX="29" advY="0" offsetX="0" offsetY="11" flipped="true" x="119" y="56" w="25" h="29" />
+      <glyph char="98" advX="29" advY="0" offsetX="3" offsetY="11" flipped="false" x="119" y="26" w="24" h="25" />
+      <glyph char="99" advX="26" advY="0" offsetX="2" offsetY="11" flipped="false" x="144" y="26" w="23" h="25" />
+      <glyph char="100" advX="29" advY="0" offsetX="3" offsetY="11" flipped="false" x="125" y="86" w="24" h="25" />
+      <glyph char="101" advX="26" advY="0" offsetX="3" offsetY="11" flipped="false" x="145" y="60" w="23" h="25" />
+      <glyph char="102" advX="26" advY="0" offsetX="3" offsetY="11" flipped="false" x="168" y="34" w="22" h="25" />
+      <glyph char="103" advX="30" advY="0" offsetX="2" offsetY="11" flipped="true" x="137" y="121" w="25" h="26" />
+      <glyph char="104" advX="30" advY="0" offsetX="3" offsetY="11" flipped="false" x="145" y="152" w="24" h="25" />
+      <glyph char="105" advX="19" advY="0" offsetX="1" offsetY="11" flipped="false" x="153" y="178" w="17" h="25" />
+      <glyph char="106" advX="22" advY="0" offsetX="0" offsetY="11" flipped="false" x="154" y="204" w="19" h="25" />
+      <glyph char="107" advX="27" advY="0" offsetX="3" offsetY="11" flipped="false" x="172" y="230" w="24" h="25" />
+      <glyph char="108" advX="24" advY="0" offsetX="3" offsetY="11" flipped="false" x="193" y="256" w="21" h="25" />
+      <glyph char="109" advX="35" advY="0" offsetX="3" offsetY="11" flipped="true" x="150" y="94" w="25" h="30" />
+      <glyph char="110" advX="30" advY="0" offsetX="3" offsetY="11" flipped="false" x="169" y="63" w="24" h="25" />
+      <glyph char="111" advX="30" advY="0" offsetX="2" offsetY="11" flipped="true" x="191" y="37" w="25" h="26" />
+      <glyph char="112" advX="28" advY="0" offsetX="3" offsetY="11" flipped="false" x="163" y="126" w="24" h="25" />
+      <glyph char="113" advX="30" advY="0" offsetX="2" offsetY="11" flipped="false" x="176" y="100" w="27" h="28" />
+      <glyph char="114" advX="29" advY="0" offsetX="3" offsetY="11" flipped="false" x="194" y="71" w="25" h="25" />
+      <glyph char="115" advX="27" advY="0" offsetX="1" offsetY="11" flipped="false" x="217" y="45" w="25" h="25" />
+      <glyph char="116" advX="25" advY="0" offsetX="0" offsetY="11" flipped="false" x="170" y="152" w="25" h="25" />
+      <glyph char="117" advX="30" advY="0" offsetX="3" offsetY="11" flipped="false" x="188" y="126" w="24" h="25" />
+      <glyph char="118" advX="28" advY="0" offsetX="0" offsetY="11" flipped="true" x="204" y="100" w="25" h="28" />
+      <glyph char="119" advX="40" advY="0" offsetX="0" offsetY="11" flipped="false" x="171" y="178" w="40" h="25" />
+      <glyph char="120" advX="27" advY="0" offsetX="0" offsetY="11" flipped="false" x="220" y="71" w="27" h="25" />
+      <glyph char="121" advX="26" advY="0" offsetX="-1" offsetY="11" flipped="false" x="196" y="152" w="28" h="25" />
+      <glyph char="122" advX="25" advY="0" offsetX="1" offsetY="11" flipped="false" x="213" y="126" w="23" h="25" />
+      <glyph char="123" advX="15" advY="0" offsetX="1" offsetY="8" flipped="true" x="217" y="19" w="35" h="14" />
+      <glyph char="124" advX="12" advY="0" offsetX="3" offsetY="9" flipped="true" x="168" y="8" w="34" h="6" />
+      <glyph char="125" advX="15" advY="0" offsetX="1" offsetY="8" flipped="true" x="174" y="204" w="35" h="13" />
+      <glyph char="126" advX="22" advY="0" offsetX="1" offsetY="20" flipped="false" x="73" y="230" w="20" h="9" />
+    </font>
+  </fonts>
+</atlas>

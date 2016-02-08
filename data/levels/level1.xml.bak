@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entities>
+  <entity id="big" x="0" y="0" z="0" width="3" height="3" />
+  <entity id="small" x="5" y="1" z="0" />
+  <entity id="movingspikes" x="5" y="1" z="1" />
+  <entity id="big" x="8" y="0" z="0" width="3" height="3" />
+  <entity id="diamond" x="8" y="0" z="1" />
+  <entity id="diamond" x="9" y="0" z="1" />
+  <entity id="diamond" x="10" y="0" z="1" />
+  <entity id="diamond" x="10" y="1" z="1" />
+  <entity id="diamond" x="9" y="1" z="1" />
+  <entity id="diamond" x="8" y="1" z="1" />
+  <entity id="diamond" x="8" y="2" z="1" />
+  <entity id="diamond" x="9" y="2" z="1" />
+  <entity id="diamond" x="10" y="2" z="1" />
+  <entity id="small" x="9" y="4" z="1" />
+  <entity id="big" x="8" y="7" z="1" width="3" height="3" />
+  <entity id="box" x="9" y="8" z="2" />
+  <entity id="big" x="11" y="7" z="3" width="3" height="3" />
+  <entity id="tree" x="12" y="7" z="4" />
+  <entity id="tree" x="12" y="9" z="4" />
+  <entity id="fallingplatform" x="16" y="8" z="3" />
+  <entity id="big" x="19" y="7" z="3" width="3" height="3" />
+  <entity id="cactus" x="19" y="7" z="4" />
+  <entity id="cactus" x="21" y="7" z="4" />
+  <entity id="cactus" x="21" y="9" z="4" />
+  <entity id="cactus" x="19" y="9" z="4" />
+  <entity id="falling" x="20" y="8" z="8" />
+  <entity id="player" x="1" y="1" z="1" />
+  <entity id="small" x="24" y="8" z="3" />
+  <entity id="small" x="28" y="8" z="3" />
+  <entity id="switch" x="28" y="8" z="4" link="plat01" />
+  <entity id="small" x="24" y="9" z="3" name="plat01" inactive="True" activation="player" onEnd="reverse">
+    <keyframe time="2" x="24" y="13" z="3" />
+  </entity>
+  <entity id="big" x="23" y="14" z="3" width="3" height="3" />
+  <entity id="end" x="24" y="15" z="4" />
+</entities>
