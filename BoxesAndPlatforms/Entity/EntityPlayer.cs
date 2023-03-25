@@ -107,7 +107,7 @@ namespace BoxesAndPlatforms {
 			cameraYaw = Ease.exp(cameraYaw, cameraYawDest, 1e-7f, world.time);
 			cameraPitch = Ease.exp(cameraPitch, cameraPitchDest, 1e-7f, world.time);
 
-			playerYaw = Ease.expAngle(playerYaw, playerYawDest, 1e-12f, world.time);
+			playerYaw = Ease.expAngle(playerYaw, playerYawDest, 1e-8f, world.time);
 
 			// Combine each direction into a single vector
 

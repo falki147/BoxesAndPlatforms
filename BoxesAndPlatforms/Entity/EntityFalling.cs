@@ -56,7 +56,7 @@ namespace BoxesAndPlatforms {
 					destDirection = MathF.PI * 3 / 2;
 			}
 			
-			direction = Ease.expAngle(direction, destDirection, 1e-12f, world.time);
+			direction = Ease.expAngle(direction, destDirection, 1e-8f, world.time);
 
 			// Check if player is beneath and if he is fall down
 			// When done go up again
