@@ -170,6 +170,7 @@ namespace BoxesAndPlatforms {
 				vb.unmap();
 				Gl.DrawArrays(BeginMode.Triangles, 0, index);
 				vb.map();
+				index = 0;
 			}
 
 			vb[index++] = new Vertex(
