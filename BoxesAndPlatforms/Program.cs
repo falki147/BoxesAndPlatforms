@@ -5,7 +5,7 @@ namespace BoxesAndPlatforms {
 	static class Program {
 		[STAThread]
 		static void Main(string[] argv) {
-			//try {
+			try {
 				// Set culture to invariant culture in order to parse floating points correctly
 				System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
 
@@ -53,22 +53,20 @@ namespace BoxesAndPlatforms {
 				Settings.save();
 
 				Log.log("Terminating");
-			// }
-			/*catch (Exception ex) {
-				#if DEBUG
-					System.Diagnostics.Debug.Fail(ex.ToString());
-				#else
-					Window.errorMessageBox(ex.ToString(), "Boxes 'n' Platforms");
-				#endif
-
+			}
+		#if !DEBUG
+            catch (Exception ex) {
+				Window.errorMessageBox(ex.ToString(), "Boxes 'n' Platforms");
 				Log.logf("Exception caught: \r\n\r\n{0}", ex.ToString());
 			}
-			finally {*/
+		#endif
+            finally
+            {
 				AssetLoader.dispose();
 				RoomManager.dispose();
 				Window.dispose();
 				Log.dispose();
-			//}
+			}
 		}
 	}
 }
