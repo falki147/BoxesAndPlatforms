@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /s &quot;$(SolutionDir)/data&quot; &quot;$(OutputPath)&quot;" />
+    <Exec Command="xcopy /s /d &quot;$(SolutionDir)data&quot; &quot;$(OutputPath)&quot;" />
   </Target>
 
 </Project>
