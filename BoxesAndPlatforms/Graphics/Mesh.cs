@@ -1,6 +1,7 @@
 ﻿using OpenGL;
 using System;
 using System.IO;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	// Stores a mesh

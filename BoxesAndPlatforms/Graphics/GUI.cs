@@ -1,5 +1,6 @@
 ﻿using OpenGL;
 using System;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	// Handles GUI drawing and checking

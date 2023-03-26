@@ -1,6 +1,7 @@
 ﻿using OpenGL;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Xml;
 
 namespace BoxesAndPlatforms {
@@ -228,7 +229,7 @@ namespace BoxesAndPlatforms {
 
 			if (loc >= 0) {
 				Gl.ActiveTexture(TextureUnit.Texture0 + loc);
-				Gl.BindTexture(tex);
+				Gl.BindTexture(tex.TextureTarget, tex.TextureID);
 			}
 		}
 

@@ -1,4 +1,5 @@
 ﻿using OpenGL;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	// Create matrices for rendering
@@ -18,8 +19,8 @@ namespace BoxesAndPlatforms {
 
 		public static Matrix4 createLookAtLH(Vector3 from, Vector3 to, Vector3 up) {
 			var zaxis = (to - from).Normalize();
-			var xaxis = up.Cross(zaxis).Normalize();
-			var yaxis = zaxis.Cross(xaxis);
+			var xaxis = Vector3.Cross(up, zaxis).Normalize();
+			var yaxis = Vector3.Cross(zaxis, xaxis);
 			
 			return new Matrix4(
 				new Vector4(xaxis.X, yaxis.X, zaxis.X, 0),

@@ -1,5 +1,6 @@
 ﻿using OpenGL;
 using System;
+using System.Numerics;
 using System.Runtime.InteropServices;
 
 namespace BoxesAndPlatforms {
@@ -18,16 +19,21 @@ namespace BoxesAndPlatforms {
 			Bottom
 		}
 
-		struct Vertex {
+        [StructLayout(LayoutKind.Sequential)]
+        struct Vertex {
 			public Vertex(Vector2 pos, Vector2 tex, Color col) {
-				this.pos = pos;
-				this.tex = tex;
-				this.col = col;
+				posX = pos.X;
+                posY = pos.Y;
+                texX = tex.X;
+                texY = tex.Y;
+                this.col = col.toUInt();
 			}
 
-			public Vector2 pos;
-			public Vector2 tex;
-			public Color col;
+			public float posX;
+            public float posY;
+            public float texX;
+            public float texY;
+            public UInt32 col;
 		}
 
 		public Batch(int size = 1024) {
@@ -59,7 +65,7 @@ namespace BoxesAndPlatforms {
 
 			if (samplerLoc >= 0) {
 				Gl.ActiveTexture(TextureUnit.Texture0 + samplerLoc);
-				Gl.BindTexture(texture);
+				Gl.BindTexture(texture.TextureTarget, texture.TextureID);
 			}
 		}
 

@@ -1,6 +1,7 @@
 ﻿using OpenGL;
 using SDL2;
 using System;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	public class EntityPlayer: Entity {
@@ -28,7 +29,7 @@ namespace BoxesAndPlatforms {
 
 			// Set texture filters
 
-			Gl.BindTexture(texPlayer);
+			Gl.BindTexture(texPlayer.TextureTarget, texPlayer.TextureID);
 			Gl.TexParameteri(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, TextureParameter.Linear);
 			Gl.TexParameteri(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, TextureParameter.LinearMipMapLinear);
 
@@ -76,7 +77,7 @@ namespace BoxesAndPlatforms {
 			if (Window.checkKeyPressed(SDL.SDL_Keycode.SDLK_c)) {
 				aniso = aniso == 1 ? 8 : 1;
 
-				Gl.BindTexture(texPlayer);
+				Gl.BindTexture(texPlayer.TextureTarget, texPlayer.TextureID);
 				
 				if (Graphics.hasAnisotropicFiltering)
 					Graphics.setAnisotropicFiltering(TextureTarget.Texture2D, Math.Min(aniso, Graphics.maxAnisotropicFiltering));
@@ -92,7 +93,7 @@ namespace BoxesAndPlatforms {
 
 		void limitVelocity() {
 			var vel = new Vector2(physics.velocity.X, physics.velocity.Y);
-			var len = vel.Length;
+			var len = vel.Length();
 
 			if (len > maxVelocity) {
 				vel *= maxVelocity / len;
@@ -128,7 +129,7 @@ namespace BoxesAndPlatforms {
 			// Normalize vector
 
 			if (dir != new Vector2()) {
-				dir = dir.Normalize();
+				dir = Vector2.Normalize(dir);
 				playerYawDest = MathF.Atan2(dir.Y, dir.X);
 			}
 
@@ -143,7 +144,7 @@ namespace BoxesAndPlatforms {
 		}
 
 		void handleAnimations(World world) {
-			var len = new Vector2(physics.velocity.X, physics.velocity.Y).Length;
+			var len = new Vector2(physics.velocity.X, physics.velocity.Y).Length();
 
 			if (standingOn != null) {
 				legTime = len < 0.05 ? 0 : (legTime + 12 * world.time) % (2 * MathF.PI);

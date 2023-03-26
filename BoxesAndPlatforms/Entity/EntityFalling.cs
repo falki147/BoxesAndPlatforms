@@ -1,5 +1,6 @@
 ﻿using OpenGL;
 using System;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	public class EntityFalling: Entity {
@@ -19,7 +20,7 @@ namespace BoxesAndPlatforms {
 
 			// Set texture filters
 
-			Gl.BindTexture(tex);
+			Gl.BindTexture(tex.TextureTarget, tex.TextureID);
 			Gl.TexParameteri(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, TextureParameter.Linear);
 			Gl.TexParameteri(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, TextureParameter.LinearMipMapLinear);
 

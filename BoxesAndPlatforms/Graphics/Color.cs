@@ -1,4 +1,5 @@
 ﻿using OpenGL;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	// Stores the color in an 8-Bit RGBA format
@@ -37,6 +38,10 @@ namespace BoxesAndPlatforms {
 				(byte) ((color >> 16) & 0xFF),
 				alpha
 			);
+		}
+
+		public uint toUInt() {
+			return ((uint) r) | (((uint)r) << 8) | (((uint)b) << 16) | (((uint)a) << 24);
 		}
 
 		public byte r, g, b, a;

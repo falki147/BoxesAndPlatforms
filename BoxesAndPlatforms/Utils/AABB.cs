@@ -1,5 +1,6 @@
 ﻿using OpenGL;
 using System;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	// Axis-Aligned Bounding Box used for fast collison detection between entities

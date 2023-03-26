@@ -1,5 +1,6 @@
 ﻿using OpenGL;
 using System;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	public class EntityDiamond: Entity {
@@ -36,7 +37,7 @@ namespace BoxesAndPlatforms {
 			// Attract diamond to player
 
 			var dif = position - world.player.position;
-			var len = dif.Length;
+			var len = dif.Length();
 
 			if (len < attractRadius) {
 				var vel = 0.5f * dif / len * (attractRadius - len);

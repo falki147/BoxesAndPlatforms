@@ -1,5 +1,6 @@
 ﻿using OpenGL;
 using System;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	public class EntityEnd: Entity {
@@ -24,7 +25,7 @@ namespace BoxesAndPlatforms {
 		public override void render(World world) {
 			world.scene.setShader(shdColored);
 
-			world.scene.setModelMatrix(rot.Matrix4 * Matrix4.CreateTranslation(position));
+			world.scene.setModelMatrix(Matrix4.Rotate(rot) * Matrix4.CreateTranslation(position));
 			world.scene.renderMesh(mshEnd, vaoEnd);
 
 			world.scene.setModelMatrix(Matrix4.CreateRotationX(-1.57f) * Matrix4.CreateTranslation(new Vector3(0.5f, 0, 0)) * Matrix4.CreateRotationZ(angle) * Matrix4.CreateTranslation(position));
@@ -38,12 +39,12 @@ namespace BoxesAndPlatforms {
 		}
 		
 		public override void update(World world) {
-			// Update rotation
+            // Update rotation
 
-			rot *= Quaternion.FromAngleAxis(((MathF.Cos(angleRot) + 1) / 4 + 1) * world.time, new Vector3(0.707f, 0.707f, 0));
-			rot *= Quaternion.FromAngleAxis(((MathF.Sin(angleRot) + 1) / 4 + 1) * world.time, new Vector3(0, 0, -1));
+            rot *= Quaternion.CreateFromAxisAngle(new Vector3(0.707f, 0.707f, 0), ((MathF.Cos(angleRot) + 1) / 4 + 1) * world.time);
+            rot *= Quaternion.CreateFromAxisAngle(new Vector3(0, 0, -1), ((MathF.Sin(angleRot) + 1) / 4 + 1) * world.time);
 
-			angle = (angle + 8 * world.time) % (2 * MathF.PI);
+            angle = (angle + 8 * world.time) % (2 * MathF.PI);
 			angleRot = (angleRot + 1f * world.time) % (2 * MathF.PI);
 
 			if (world.player.collisionBox.isIntersecting(collisionBox))

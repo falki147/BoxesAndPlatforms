@@ -1,6 +1,7 @@
 ﻿using BulletSharp;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	public class Physics: IDisposable {
@@ -26,25 +27,25 @@ namespace BoxesAndPlatforms {
 				this.world = world;
 			}
 
-			public void applyForce(OpenGL.Vector3 force) {
+			public void applyForce(Vector3 force) {
 				if (!body.IsActive)
 					body.Activate();
 				
-				body.ApplyCentralForce(new Vector3(force.X, force.Y, force.Z));
+				body.ApplyCentralForce(new BulletSharp.Math.Vector3(force.X, force.Y, force.Z));
 			}
 
-			public void applyImpulse(OpenGL.Vector3 impulse) {
+			public void applyImpulse(Vector3 impulse) {
 				if (!body.IsActive)
 					body.Activate();
 
-				body.ApplyCentralImpulse(new Vector3(impulse.X, impulse.Y, impulse.Z));
+				body.ApplyCentralImpulse(new BulletSharp.Math.Vector3(impulse.X, impulse.Y, impulse.Z));
 			}
 
-			public void translate(OpenGL.Vector3 trans) {
+			public void translate(Vector3 trans) {
 				if (body.MotionState != null)
-					body.MotionState.WorldTransform = BulletSharp.Matrix.Translation(trans.X, trans.Y, trans.Z) * body.MotionState.WorldTransform;
+					body.MotionState.WorldTransform = BulletSharp.Math.Matrix.Translation(trans.X, trans.Y, trans.Z) * body.MotionState.WorldTransform;
 
-				body.WorldTransform = BulletSharp.Matrix.Translation(trans.X, trans.Y, trans.Z) * body.WorldTransform;
+				body.WorldTransform = BulletSharp.Math.Matrix.Translation(trans.X, trans.Y, trans.Z) * body.WorldTransform;
 			}
 
 			public void setFilter(Filter group, Filter mask) {
@@ -52,30 +53,30 @@ namespace BoxesAndPlatforms {
 				world.AddRigidBody(body, (short) group, (short) mask);
 			}
 			
-			public OpenGL.Vector3 velocity {
+			public Vector3 velocity {
 				get {
 					var vel = body.LinearVelocity;
 
-					return new OpenGL.Vector3(vel.X, vel.Y, vel.Z);
+					return new Vector3(vel.X, vel.Y, vel.Z);
 				}
 				set {
 					if (!body.IsActive)
 						body.Activate();
 					
-					body.LinearVelocity = new Vector3(value.X, value.Y, value.Z);
+					body.LinearVelocity = new BulletSharp.Math.Vector3(value.X, value.Y, value.Z);
 				}
 			}
 
-			public OpenGL.Vector3 translation {
+			public Vector3 translation {
 				get {
-					BulletSharp.Matrix matrix;
+					BulletSharp.Math.Matrix matrix;
 
 					if (body.MotionState != null)
 						matrix = body.MotionState.WorldTransform;
 					else
 						matrix = body.WorldTransform;
 
-					return new OpenGL.Vector3(matrix.M41, matrix.M42, matrix.M43);
+					return new Vector3(matrix.M41, matrix.M42, matrix.M43);
 				}
 			}
 
@@ -86,7 +87,7 @@ namespace BoxesAndPlatforms {
 					return body.InvMass == 0 ? 0 : 1 / body.InvMass;
 				}
 				set {
-					body.SetMassProps(value, value != 0 ? body.CollisionShape.CalculateLocalInertia(value) : Vector3.Zero);
+					body.SetMassProps(value, value != 0 ? body.CollisionShape.CalculateLocalInertia(value) : BulletSharp.Math.Vector3.Zero);
 					
 					if (!body.IsStaticObject && !body.IsActive)
 						body.Activate();
@@ -117,13 +118,13 @@ namespace BoxesAndPlatforms {
 			Dispose(false);
 		}
 
-		public Object addBox(OpenGL.Vector3 origin, OpenGL.Vector3 size, float mass, float friction) {
+		public Object addBox(Vector3 origin, Vector3 size, float mass, float friction) {
 			var box = addBoxShape(size);
 
-			var localInertia = mass == 0 ? Vector3.Zero : box.shape.CalculateLocalInertia(mass);
+			var localInertia = mass == 0 ? BulletSharp.Math.Vector3.Zero : box.shape.CalculateLocalInertia(mass);
 
 			var motionState = new DefaultMotionState(
-				BulletSharp.Matrix.Translation(origin.X, origin.Y, origin.Z)
+				BulletSharp.Math.Matrix.Translation(origin.X, origin.Y, origin.Z)
 			);
 			
 			var constrInfo = new RigidBodyConstructionInfo(mass, motionState, box.shape, localInertia);
@@ -134,7 +135,7 @@ namespace BoxesAndPlatforms {
 
 			constrInfo.Dispose();
 
-			body.InvInertiaDiagLocal = Vector3.Zero;
+			body.InvInertiaDiagLocal = BulletSharp.Math.Vector3.Zero;
 			body.UpdateInertiaTensor();
 			
 			world.AddRigidBody(body);
@@ -142,14 +143,14 @@ namespace BoxesAndPlatforms {
 			return new Object(body, world);
 		}
 
-		public Object addBox(OpenGL.Vector3 origin, OpenGL.Vector3 size, float mass, float friction, Filter group, Filter mask) {
+		public Object addBox(Vector3 origin, Vector3 size, float mass, float friction, Filter group, Filter mask) {
 			var box = addBoxShape(size);
 
-			var localInertia = mass == 0 ? Vector3.Zero : box.shape.CalculateLocalInertia(mass);
+			var localInertia = mass == 0 ? BulletSharp.Math.Vector3.Zero : box.shape.CalculateLocalInertia(mass);
 
 			var motionState = new DefaultMotionState(
-				BulletSharp.Matrix.Translation(origin.X, origin.Y, origin.Z)
-			);
+				BulletSharp.Math.Matrix.Translation(origin.X, origin.Y, origin.Z)
+			);;
 
 			var constrInfo = new RigidBodyConstructionInfo(mass, motionState, box.shape, localInertia);
 
@@ -159,7 +160,7 @@ namespace BoxesAndPlatforms {
 
 			constrInfo.Dispose();
 
-			body.InvInertiaDiagLocal = Vector3.Zero;
+			body.InvInertiaDiagLocal = BulletSharp.Math.Vector3.Zero;
 			body.UpdateInertiaTensor();
 			
 			world.AddRigidBody(body, (short) group, (short) mask);
@@ -175,7 +176,7 @@ namespace BoxesAndPlatforms {
 			return new Shape() { shape = sphere };
 		}
 
-		public Shape addBoxShape(OpenGL.Vector3 size) {
+		public Shape addBoxShape(Vector3 size) {
 			var box = new BoxShape(
 				size.X / 2,
 				size.Y / 2,
@@ -189,24 +190,24 @@ namespace BoxesAndPlatforms {
 
 		// Test for collisions when moved from "from" to "to" and return position where it first collides
 		
-		public bool convexSweepTest(Shape shape, OpenGL.Vector3 from, OpenGL.Vector3 to, out OpenGL.Vector3 pos, Filter group, Filter mask) {
+		public bool convexSweepTest(Shape shape, Vector3 from, Vector3 to, out Vector3 pos, Filter group, Filter mask) {
 			var callback = new ClosestConvexResultCallback();
 
-			callback.ConvexFromWorld      = new Vector3(from.X, from.Y, from.Z);
-			callback.ConvexToWorld        = new Vector3(to.X, to.Y, to.Z);
+			callback.ConvexFromWorld      = new BulletSharp.Math.Vector3(from.X, from.Y, from.Z);
+			callback.ConvexToWorld        = new BulletSharp.Math.Vector3(to.X, to.Y, to.Z);
 			callback.ClosestHitFraction   = 1.0f;
-			callback.CollisionFilterGroup = (CollisionFilterGroups) group;
-			callback.CollisionFilterMask  = (CollisionFilterGroups) mask;
+			callback.CollisionFilterGroup = (int) group;
+			callback.CollisionFilterMask  = (int) mask;
 
-			world.ConvexSweepTest(shape.shape, BulletSharp.Matrix.Translation(from.X, from.Y, from.Z), BulletSharp.Matrix.Translation(to.X, to.Y, to.Z), callback);
+			world.ConvexSweepTest(shape.shape, BulletSharp.Math.Matrix.Translation(from.X, from.Y, from.Z), BulletSharp.Math.Matrix.Translation(to.X, to.Y, to.Z), callback);
 
 			if (callback.HasHit) {
 				var vec = Vector3.Lerp(new Vector3(from.X, from.Y, from.Z), new Vector3(to.X, to.Y, to.Z), callback.ClosestHitFraction);
-				pos = new OpenGL.Vector3(vec.X, vec.Y, vec.Z);
+				pos = new Vector3(vec.X, vec.Y, vec.Z);
 				return true;
 			}
 
-			pos = new OpenGL.Vector3();
+			pos = new Vector3();
 			return false;
 		}
 		
@@ -269,7 +270,7 @@ namespace BoxesAndPlatforms {
 
 		public float gravity {
 			set {
-				world.Gravity = new Vector3(0, 0, -value);
+				world.Gravity = new BulletSharp.Math.Vector3(0, 0, -value);
 			}
 			get {
 				return -world.Gravity.Z;

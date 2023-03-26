@@ -1,6 +1,7 @@
 ﻿using OpenGL;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace BoxesAndPlatforms {
 	public abstract class Entity: IDisposable {
