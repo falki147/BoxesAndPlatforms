@@ -13,4 +13,8 @@
     <PackageReference Include="ppy.SDL2-CS" Version="1.0.82" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /s &quot;$(SolutionDir)/data&quot; &quot;$(OutputPath)&quot;" />
+  </Target>
+
 </Project>
